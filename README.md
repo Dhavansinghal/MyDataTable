@@ -1,4 +1,4 @@
-This is a NPM package for Tables, Created with ❤️ By [Dhavan Singhal](https://www.linkedin.com/in/dhavan-singhal-a6742b14a/).
+This is an NPM package for Tables, Created with ❤️ By [Dhavan Singhal](https://www.linkedin.com/in/dhavan-singhal-a6742b14a/).
 
 # What It Is
 
