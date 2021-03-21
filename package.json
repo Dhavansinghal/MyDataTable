@@ -1,0 +1,26 @@
+{
+  "name": "mydatatable",
+  "version": "1.0.0",
+  "description": "a table with filters sortby edit delete any many more options",
+  "main": "MyDataTable.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dhavansinghal/MyDataTable.git"
+  },
+  "keywords": [
+    "datatable",
+    "react",
+    "table",
+    "frontend",
+    "mydatatable"
+  ],
+  "author": "Dhavan Singhal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dhavansinghal/MyDataTable/issues"
+  },
+  "homepage": "https://github.com/Dhavansinghal/MyDataTable#readme"
+}
