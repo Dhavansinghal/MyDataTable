@@ -176,7 +176,7 @@ class MyReactTable extends Component {
 
 
 
-    print = () => {
+    printTable(){
         var content = document.getElementById("printarea");
         var pri = document.getElementById("ifmcontentstoprint").contentWindow;
         const orderHtml =
@@ -193,7 +193,7 @@ class MyReactTable extends Component {
     };
 
     //Delete A Row 
-    deleteRow = (event) => {
+    deleteRow(event){
         let index = parseInt(event.target.value)
         var {filterData,buttonEditable,initalTableData,contentEditable} = this.state
 
@@ -227,7 +227,7 @@ class MyReactTable extends Component {
     }
 
     //Edit Table Row 
-    editRow = (event) => {
+    editRow(event){
         var index = parseInt(event.target.value)
         var td = event.target.parentElement.parentElement
         var childnodes = td.children 
@@ -317,7 +317,7 @@ class MyReactTable extends Component {
         }
     }
 
-    editSaveButton  = (event) => { 
+    editSaveButton(event){ 
         var index = parseInt(event.target.value)
         var td = event.target.parentElement.parentElement
         var childnodes = td.children 
@@ -358,7 +358,7 @@ class MyReactTable extends Component {
         }, 3000);
 
     }
-    editCancelButton  = (event) => { 
+    editCancelButton(event){ 
         var index = parseInt(event.target.value)
         var td = event.target.parentElement.parentElement
         var childnodes = td.children 
@@ -394,7 +394,7 @@ class MyReactTable extends Component {
   
 
     //Sorting Functions
-    getSortByToggleProps = (event) => {
+    getSortByToggleProps(event){
 
         const colIndex = event.target.getAttribute('column-index');
         const {filterData,columns,initalTableData} = this.state;
@@ -436,7 +436,7 @@ class MyReactTable extends Component {
     };
 
     //Pagination Functions
-    checkCanNextPreviousPage = () => {
+    checkCanNextPreviousPage(){
         let {pageNumber,pageCount,canNextPage,canPreviousPage} = this.state;
 
         canNextPage = (pageNumber+1 < pageCount);
@@ -444,24 +444,24 @@ class MyReactTable extends Component {
 
         this.setState({canNextPage,canPreviousPage});
     }
-    gotoPage = (pageNum) => {
+    gotoPage(pageNum){
         if(pageNum+1 <= this.state.pageCount){
             this.setState({pageNumber:pageNum},()=>{
                 this.checkCanNextPreviousPage();
             });
         }
     }
-    nextPage =() => {
+    nextPage(){
         this.setState({pageNumber:this.state.pageNumber+1},()=>{
             this.checkCanNextPreviousPage();
         });
     }
-    previousPage =() => {
+    previousPage(){
         this.setState({pageNumber:this.state.pageNumber-1},()=>{
             this.checkCanNextPreviousPage();
         });
     }
-    changePageRow = (e) => {
+    changePageRow(e){
     
         const pageCount = Math.ceil(this.state.filterData.length / (Number(e.target.value)));
         this.setState({
@@ -474,7 +474,7 @@ class MyReactTable extends Component {
     }
 
     //ShowHideColumn Functions
-    showHideColumn = (e) => {
+    showHideColumn(e){
         let {columns} = this.state;
         const colIndex = e.target.value[0];
         columns[colIndex].showHideCheck = !columns[colIndex].showHideCheck;
@@ -484,7 +484,7 @@ class MyReactTable extends Component {
     }
 
     //Set Different Fillters
-    checkFilterName = (name,colIndex) => {
+    checkFilterName(name,colIndex){
         switch(name.toString().toLowerCase()){
             case "search": 
                 return this.getSearchFilter(colIndex);
@@ -496,7 +496,7 @@ class MyReactTable extends Component {
                 return "Unknown Filter"
         }
     }
-    getSearchFilter = (colIndex)=>{
+    getSearchFilter(colIndex){
         let {filterValues} = this.state;
         const { classes} =this.props;
 
@@ -514,7 +514,7 @@ class MyReactTable extends Component {
             </div>
         )
     }
-    getDropdownFilter = (colIndex)=>{
+    getDropdownFilter(colIndex){
         var {initalTableData,filterValues} = this.state;
         const {classes} = this.props;
         var distinctValues = [];
@@ -547,7 +547,7 @@ class MyReactTable extends Component {
             </FormControl>
         )
     }   
-    getDateRangeFilter = (colIndex)=>{
+    getDateRangeFilter(colIndex){
         var {initalTableData,filterValues} = this.state;
         const {classes} = this.props;
         
@@ -625,7 +625,7 @@ class MyReactTable extends Component {
         )
     }   
 
-    applyFilterSets = () =>{
+    applyFilterSets(){
         const {columns,filterValues,initalTableData} =this.state;
         var resultData = initalTableData;
         filterValues.forEach((filterValue,key) => {
@@ -735,7 +735,7 @@ class MyReactTable extends Component {
                             className={classes.button}
                             startIcon={<PrintIcon />}
                             color="primary"
-                            onClick={this.print}>
+                            onClick={this.printTable}>
                             Print
                         </Button>
                     </div>
