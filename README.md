@@ -7,7 +7,7 @@ With this NPM Package you can change your normal table with Datatable. Now You m
 ### How to use it
 <br/> 
 
-`npm install mydatatable`
+`npm install myreacttable`
 <br/>
 this command is all you need to install the npm package in your project.<br/>
 Now you must be wonder about the depandancies <br/>
@@ -37,7 +37,7 @@ for make this process easy for you i attached an ID with almost every element. y
 
 after installing the dependencies and this package, you can use this table like the below code<br/><br/>
 ```
-    import MyDataTable from "mydatatable";
+    import MyReactTable from "myreacttable";
 
     const initialColumnProps = [
     {
@@ -91,7 +91,7 @@ after installing the dependencies and this package, you can use this table like 
         this.setState({dataEdit : data})
     } 
 
-    <MyDataTable 
+    <MyReactTable 
             onDataDelete={this.handleDataDelete} 
             onDataEdit={this.handleDataEdit} 
             columns={initialColumnProps}

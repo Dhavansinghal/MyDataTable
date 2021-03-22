@@ -76,7 +76,7 @@ const MenuProps = {
 
 
 
-class MyDataTable extends Component {
+class MyReactTable extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -952,4 +952,4 @@ class MyDataTable extends Component {
             );
     } 
 }
-export default withStyles(styles)(MyDataTable);
+export default withStyles(styles)(MyReactTable);
