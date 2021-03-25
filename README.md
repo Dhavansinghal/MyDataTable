@@ -106,31 +106,18 @@ after installing the dependencies and this package, you can use this table like 
 ```
 **by default react use React.StrictMode in index.js you need to remove it to use this package**
 
-
-<br/>
-<br/>
-<br/>
 <br/>
 
-### Enable/Disable Edit or Delete Option
+## Enable/Disable Edit or Delete Option
 you can hide the edit or delete option from the table if you dont want it by providing `false` value in `editButton` and `deleteButton` props respectively. By default the value will be `true` for these two props.<br/>
 if the edit option or delete option is true than you need to provide a extra column in each row in data object that will uniquely identify that row (primary key). if both option are set to false than you don't have to provide this extra column in data object otherwise it will through the error or vice verse.
 <br/>
-<br/>
-<br/>
+
+## Get Edit or Delete row by callback function
+you can get the row that is being edited or deleted by the user by providing a funtion in `onDataEdit` and `onDataDelete` props respectively. And with that you can save those changes in your Database.
 <br/>
 
-
-### Get Edit or Delete row by callback function
-<br/>you can get the row that is being edited or deleted by the user by providing a funtion in `onDataEdit` and `onDataDelete` props respectively. And with that you can save those changes in your Database.
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-## Features
-### Filters
+## Filters
 Filter will be added in columns for use a filter for that particular column.<br/>
   **1) Search Option**<br/>
     This option will help you to search a value in the particular row<br/>
@@ -140,9 +127,8 @@ Filter will be added in columns for use a filter for that particular column.<br/
     You can Use this by Providing the Value `Dropdown` in `Filter` key on column data Object in respective column value.<br/>
   **3) Daterange Option**<br/>
     This option will helo you to filter the data based on the date. This option can only use for a column which have dates. if you have any other type of value like number or string in that row then it will give you a error<br/>
-    You can Use this by Providing the Value `Daterange` in `Filter` key on column data Object in respective column value.<br/>
-    <br/>
-    <br/>
+    You can Use this by Providing the Value `Daterange` in `Filter` key on column data Object in respective column value.
+<br/>    
 
 ## Datatypes for Edit Data
 type will be added in columns if you are using edit option when the user click on edit button it will help to under what input need to be taken from the user for that particular column. we have four types available.<br/>
@@ -157,27 +143,19 @@ type will be added in columns if you are using edit option when the user click o
     You can Use this by Providing the Value `number` in `type` key on column data Object in respective column value.<br/>
   **4) Select**<br/>
     if you use select as a type than it will ask user to select a value from a dropdown. The dropdown will be automatically generated from the unquie values available in the table in that column or you can provide those values from which you want the user to select a value by providing a array of values in `option` key on column<br/>
-    You can Use this by Providing the Value `select` in `type` key on column data Object in respective column value.<br/>
-    <br/>
-    <br/>
+    You can Use this by Providing the Value `select` in `type` key on column data Object in respective column value
+<br/>
+    
 ## Sorting
 This table provide you the feature of sorting column. This option will by on by default for the columns
 <br/>
-    <br/>
-    <br/>
-
+   
 ## Pagination
 This table provide you the feature of Pagination. This option will by on by default for the columns
-
 <br/>
-    <br/>
-    <br/>
-
+    
 ## Show/Hide a Column
 This table provide you the feature of Hide a Column. You can Hide or Show any Columns if you want. This option will by on by default for the columns
-
-<br/>
-<br/>
 <br/>
 
 ## Print The Table
