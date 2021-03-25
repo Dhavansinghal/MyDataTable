@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-// import { Table, Row } from "reactstrap";
 
 import {motion, AnimatePresence} from "framer-motion";
 
@@ -19,6 +18,7 @@ import PrintIcon from "@material-ui/icons/Print";
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
+import { ThreeSixtySharp } from "@material-ui/icons";
 
 //Style For Select Tag
 const styles = (theme) => ({
@@ -77,6 +77,7 @@ const MenuProps = {
 
 
 class MyReactTable extends Component {
+        
     constructor(props) {
         super(props);
         this.state = {
@@ -477,6 +478,7 @@ class MyReactTable extends Component {
     showHideColumn(e){
         let {columns} = this.state;
         const colIndex = e.target.value[0];
+        
         columns[colIndex].showHideCheck = !columns[colIndex].showHideCheck;
 
         this.setState({columns});
@@ -699,7 +701,7 @@ class MyReactTable extends Component {
                                 value={[]}
                                 input={<Input />}
                                 MenuProps={MenuProps}
-                                onChange={this.showHideColumn}
+                                onChange={this.showHideColumn.bind(this)}
                                 >
                                 {columns.map((column,index) => (
                                     
@@ -751,7 +753,7 @@ class MyReactTable extends Component {
                                 <tr>
                                     {columns.map((column,i) => (
                                         <th style={{borderBottom:'2px solid #c8ced3',cursor: 'pointer',display:column.showHideCheck ? "":"none"}} key={i}>
-                                            <div onClick={this.getSortByToggleProps} column-index={i}>
+                                            <div onClick={this.getSortByToggleProps.bind(this)} column-index={i}>
                                                 <span column-index={i}>
                                                     {column.Header+ " " }
                                                     {/* Add a sort direction indicator */}
@@ -779,7 +781,7 @@ class MyReactTable extends Component {
                                                     return (
                                                         <motion.td 
                                                             key={index} 
-                                                            style={{borderTop:'1px solid #c8ced3',display:columns[i] ? columns[i].showHideCheck ? "":"none":"none"}}
+                                                            style={{borderTop:'1px solid #c8ced3',display:columns[index] ? columns[index].showHideCheck ? "":"none":"none"}}
                                                             initial={{opacity: 0,y:-10}} 
                                                             animate={{opacity: 1,y:0}} 
                                                             exit={{ opacity: 0.4, y:-10 }}
@@ -793,28 +795,28 @@ class MyReactTable extends Component {
                                                 editButton ?
                                                     row[row.length-1] ? 
                                                     <motion.td 
-                                                    style={{borderTop:'1px solid #c8ced3',display:columns[columns.length-1].showHideCheck ? "":"none" }}
+                                                    style={{borderTop:'1px solid #c8ced3',display:columns[columns.length-contentEditable].showHideCheck ? "":"none" }}
                                                     initial={{opacity: 0,y:-10}} 
                                                     animate={{opacity: 1,y:0}} 
                                                     exit={{ opacity: 0.4, y:-10 }}
                                                     >
-                                                        <button className="btn btn-outline-success" onClick={this.editSaveButton} value={row[row.length-contentEditable]} >
+                                                        <button className="btn btn-outline-success" onClick={this.editSaveButton.bind(this)} value={row[row.length-contentEditable]} >
                                                             <i className="fa fa-edit"></i>&nbsp;Save
                                                         </button>  
                                                         &nbsp; | &nbsp; 
-                                                        <button className="btn btn-outline-warning" onClick={this.editCancelButton} value={row[row.length-contentEditable]} >
+                                                        <button className="btn btn-outline-warning" onClick={this.editCancelButton.bind(this)} value={row[row.length-contentEditable]} >
                                                             <i className="fa fa-edit"></i>&nbsp;Cancel
                                                         </button>                                       
                                                     </motion.td>
                                                     :
                                                     
                                                     <motion.td 
-                                                    style={{borderTop:'1px solid #c8ced3',display:columns[columns.length-1].showHideCheck ? "":"none" }}
+                                                    style={{borderTop:'1px solid #c8ced3',display:columns[columns.length-contentEditable].showHideCheck ? "":"none" }}
                                                     initial={{opacity: 0,y:-10}} 
                                                     animate={{opacity: 1,y:0}} 
                                                     exit={{ opacity: 0.4, y:-10 }}
                                                     >
-                                                        <button className="btn btn-outline-warning" onClick={this.editRow} value={row[row.length-contentEditable]} >
+                                                        <button className="btn btn-outline-warning" onClick={this.editRow.bind(this)} value={row[row.length-contentEditable]} >
                                                             <i className="fa fa-edit"></i>&nbsp;Edit
                                                         </button>                                       
                                                     </motion.td>
@@ -829,7 +831,7 @@ class MyReactTable extends Component {
                                                     animate={{opacity: 1,y:0}} 
                                                     exit={{ opacity: 0.4, y:-10 }}
                                                 >
-                                                    <button className="btn btn-outline-danger" onClick={this.deleteRow} value={row[row.length-contentEditable]} >
+                                                    <button className="btn btn-outline-danger" onClick={this.deleteRow.bind(this)} value={row[row.length-contentEditable]} >
                                                         <i className="fa fa-trash"></i>&nbsp;Delete
                                                     </button>                                       
                                                 </motion.td>
@@ -923,7 +925,7 @@ class MyReactTable extends Component {
                         <Select
                             color="primary"
                             value={pageRow}
-                            onChange={this.changePageRow}
+                            onChange={this.changePageRow.bind(this)}
                         >
                             {[5,10, 50,100].map((pageSize) => {
                                 if(pageSize < filterData.length){
