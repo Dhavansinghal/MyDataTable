@@ -14,7 +14,7 @@ Now you must be wonder about the depandancies <br/>
 it is where the sad part came, this npm package is only for react project till now <br/>
 and you need two preinstall npm packages to use this package. Those package are given below:<br/>
    <br/>
-["bootstrap": "^4.5.2"](https://www.npmjs.com/package/bootstrap) : install this package with `npm install bootstrap` command <br/>
+["bootstrap": "^4.5.2"](https://www.npmjs.com/package/bootstrap){:target="_blank"} : install this package with `npm install bootstrap` command <br/>
 i use this package for make the table responsive 
 <br/>
 <br/>
