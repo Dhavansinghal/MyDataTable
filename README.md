@@ -14,13 +14,17 @@ Now you must be wonder about the depandancies <br/>
 it is where the sad part came, this npm package is only for react project till now <br/>
 and you need two preinstall npm packages to use this package. Those package are given below:<br/>
    <br/>
-["bootstrap": "^4.5.2"](https://www.npmjs.com/package/bootstrap){:target="_blank"} : install this package with `npm install bootstrap` command <br/>
-i use this package for make the table responsive 
-<br/>
-<br/>
-["framer-motion": "^2.6.0"](https://www.npmjs.com/package/framer-motion) : install this package with `npm install framer-motion` command <br/>
+["bootstrap"](https://www.npmjs.com/package/bootstrap) : install this package with `npm i bootstrap` command <br/>
+i use this package for make the table responsive along with this you have to import the below css file to make it work properly.<br/>
+`import 'bootstrap/dist/css/bootstrap.min.css';`
+<br/><br/>
+["framer-motion"](https://www.npmjs.com/package/framer-motion) : install this package with `npm i framer-motion` command <br/>
 i use this package for creating some animation ,if you want you can skip this but for that you have to modify the package file.
 <br/><br/>
+["@material-ui"](https://www.npmjs.com/package/@material-ui/core) : install these package with `npm i @material-ui/core` and `npm i @material-ui/icons` command <br/>
+i use this package for creating some animation ,if you want you can skip this but for that you have to modify the package file.
+<br/><br/>
+**by default react use React.StrictMode in index.js you need to remove it to use this package**
 
 ## Don't Like The Table UI?
 
@@ -38,6 +42,7 @@ for make this process easy for you i attached an ID with almost every element. y
 after installing the dependencies and this package, you can use this table like the below code<br/><br/>
 ```
     import MyReactTable from "myreacttable";
+    import 'bootstrap/dist/css/bootstrap.min.css';
 
     const initialColumnProps = [
     {
@@ -68,18 +73,18 @@ after installing the dependencies and this package, you can use this table like 
     ];
 
     const initialDataProps = [
-        ["I", 53,"Pending","11-1-2021", 0 ]
-        ["A", 77,"Pending","18-1-2021", 1 ]
-        ["C", 34,"Complete","31-1-2021", 2 ]
-        ["B", 98,"Complete","21-3-2021", 3 ]
-        ["E", 43,"Pending","13-2-2021", 4 ]
-        ["F", 67,"Complete","12-3-2021", 5 ]
-        ["G", 76,"Complete","22-3-2021", 6 ]
-        ["H", 45,"Pending","11-2-2021", 7 ]
-        ["Z", 87,"Complete","16-3-2021", 8 ]
-        ["X", 65,"Pending","17-2-2021", 9 ]
-        ["Y", 23,"Pending","28-3-2021", 10 ]
-        ["W", 12,"Complete","27-2-2021", 11 ]
+        ["I", 53,"Pending","11-1-2021", 0 ],
+        ["A", 77,"Pending","18-1-2021", 1 ],
+        ["C", 34,"Complete","31-1-2021", 2 ],
+        ["B", 98,"Complete","21-3-2021", 3 ],
+        ["E", 43,"Pending","13-2-2021", 4 ],
+        ["F", 67,"Complete","12-3-2021", 5 ],
+        ["G", 76,"Complete","22-3-2021", 6 ],
+        ["H", 45,"Pending","11-2-2021", 7 ],
+        ["Z", 87,"Complete","16-3-2021", 8 ],
+        ["X", 65,"Pending","17-2-2021", 9 ],
+        ["Y", 23,"Pending","28-3-2021", 10 ],
+        ["W", 12,"Complete","27-2-2021", 11 ],
         ["Q", 54,"Complete","31-1-2021", 12 ]
     ];
 
@@ -100,6 +105,9 @@ after installing the dependencies and this package, you can use this table like 
             deleteButton={true}
             />
 ```
+**by default react use React.StrictMode in index.js you need to remove it to use this package**
+<br/>
+<br/>
 
 ## Options
 ### Filters
