@@ -12,7 +12,7 @@ With this NPM Package you can change your normal table with Datatable. Now You m
 this command is all you need to install the npm package in your project.<br/>
 Now you must be wonder about the depandancies <br/>
 it is where the sad part came, this npm package is only for react project till now <br/>
-and you need two preinstall npm packages to use this package. Those package are given below:<br/>
+and you need three preinstall npm packages to use this package. Those packages are given below:<br/>
    <br/>
 ["bootstrap"](https://www.npmjs.com/package/bootstrap) : install this package with `npm i bootstrap` command <br/>
 i use this package for make the table responsive along with this you have to import the below css file to make it work properly.<br/>
@@ -22,7 +22,7 @@ i use this package for make the table responsive along with this you have to imp
 i use this package for creating some animation ,if you want you can skip this but for that you have to modify the package file.
 <br/><br/>
 ["@material-ui"](https://www.npmjs.com/package/@material-ui/core) : install these package with `npm i @material-ui/core` and `npm i @material-ui/icons` command <br/>
-i use this package for creating some animation ,if you want you can skip this but for that you have to modify the package file.
+i use this package for using some icons and input fields.
 <br/><br/>
 **by default react use React.StrictMode in index.js you need to remove it to use this package**
 
@@ -32,9 +32,8 @@ although i tried my best to make the UI look Good and Simple. and this table is 
 but if you still reading this than i think you don't like UI, do you??<br/>
 you don't have to answer that question. Yes!! you can modify the design the way you want.<br/>
 for make this process easy for you i attached an ID with almost every element. you can refer the Below Picture For that.
-
    <br/>
-   
+  
   ![Alt text](img/id_reference_images.jpg?raw=true "ID Reference")
 
 # How to use this
@@ -106,42 +105,83 @@ after installing the dependencies and this package, you can use this table like 
             />
 ```
 **by default react use React.StrictMode in index.js you need to remove it to use this package**
+
+
+<br/>
+<br/>
 <br/>
 <br/>
 
-## Options
-### Filters
-Filter will be added in columns for use a filter for that particular column
-  **Search Option**<br/>
-    This option will help you to search a value in the particular row<br/>
-    You can Use this by Providing the Value `Search` in `Filter` key on column data Object in respective column value.<br/>
-  **Dropdown Option**<br/>
-    This option will filter all the unqiuq value and provide you an option to filter the data based on those values. Like in case you have a status column in your data and you use the Dropdown filter for that columne it'll help the user to filter the data based on all the Status available in the data.<br/>
-    You can Use this by Providing the Value `Dropdown` in `Filter` key on column data Object in respective column value.<br/>
-  **Daterange Option**<br/>
-    This option will helo you to filter the data based on the date. This option can only use for a column which have dates. if you have any other type of value like number or string in that row then it will give you a error<br/>
-    You can Use this by Providing the Value `Daterange` in `Filter` key on column data Object in respective column value.<br/>
-
-### Data types
-type will be added in columns if you are using edit option when the user click on edit button it will help to under what input need to be taken from the user for that particular column. we have four types available.
-  **text**<br/>
-    It will take all kind of values. It can be alphabet, numbers or any symbol .<br/>
-    You can Use this by Providing the Value `text` in `type` key on column data Object in respective column value.
-  **Date**<br/>
-    This will take only date value.<br/>
-    You can Use this by Providing the Value `date` in `type` key on column data Object in respective column value.<br/>
-  **Number**<br/>
-    This will take numbers only<br/>
-    You can Use this by Providing the Value `number` in `type` key on column data Object in respective column value.<br/>
-  **Select**<br/>
-    if you use select as a type than it will ask user to select a value from a dropdown. The dropdown will be automatically generated from the unquie values available in the table in that column or you can provide those values from which you want the user to select a value by providing a array of values in `option` key on column<br/>
-    You can Use this by Providing the Value `select` in `type` key on column data Object in respective column value.<br/>
-
-### Hide/Show Edit or Delete Option
+### Enable/Disable Edit or Delete Option
 you can hide the edit or delete option from the table if you dont want it by providing `false` value in `editButton` and `deleteButton` props respectively. By default the value will be `true` for these two props.<br/>
 if the edit option or delete option is true than you need to provide a extra column in each row in data object that will uniquely identify that row (primary key). if both option are set to false than you don't have to provide this extra column in data object otherwise it will through the error or vice verse.
+<br/>
+<br/>
+<br/>
+<br/>
+
 
 ### Get Edit or Delete row by callback function
-you can get the row that is being edited or deleted by the user by providing a funtion in `onDataEdit` and `onDataDelete` props respectively.
+<br/>you can get the row that is being edited or deleted by the user by providing a funtion in `onDataEdit` and `onDataDelete` props respectively. And with that you can save those changes in your Database.
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+## Features
+### Filters
+Filter will be added in columns for use a filter for that particular column.<br/>
+  **1) Search Option**<br/>
+    This option will help you to search a value in the particular row<br/>
+    You can Use this by Providing the Value `Search` in `Filter` key on column data Object in respective column value.<br/>
+  **2) Dropdown Option**<br/>
+    This option will filter all the unqiuq value and provide you an option to filter the data based on those values. Like in case you have a status column in your data and you use the Dropdown filter for that columne it'll help the user to filter the data based on all the Status available in the data.<br/>
+    You can Use this by Providing the Value `Dropdown` in `Filter` key on column data Object in respective column value.<br/>
+  **3) Daterange Option**<br/>
+    This option will helo you to filter the data based on the date. This option can only use for a column which have dates. if you have any other type of value like number or string in that row then it will give you a error<br/>
+    You can Use this by Providing the Value `Daterange` in `Filter` key on column data Object in respective column value.<br/>
+    <br/>
+    <br/>
+
+## Datatypes for Edit Data
+type will be added in columns if you are using edit option when the user click on edit button it will help to under what input need to be taken from the user for that particular column. we have four types available.<br/>
+  **1) text**<br/>
+    It will take all kind of values. It can be alphabet, numbers or any symbol .<br/>
+    You can Use this by Providing the Value `text` in `type` key on column data Object in respective column value.<br/>
+  **2) Date**<br/>
+    This will take only date value.<br/>
+    You can Use this by Providing the Value `date` in `type` key on column data Object in respective column value.<br/>
+  **3) Number**<br/>
+    This will take numbers only<br/>
+    You can Use this by Providing the Value `number` in `type` key on column data Object in respective column value.<br/>
+  **4) Select**<br/>
+    if you use select as a type than it will ask user to select a value from a dropdown. The dropdown will be automatically generated from the unquie values available in the table in that column or you can provide those values from which you want the user to select a value by providing a array of values in `option` key on column<br/>
+    You can Use this by Providing the Value `select` in `type` key on column data Object in respective column value.<br/>
+    <br/>
+    <br/>
+## Sorting
+This table provide you the feature of sorting column. This option will by on by default for the columns
+<br/>
+    <br/>
+    <br/>
+
+## Pagination
+This table provide you the feature of Pagination. This option will by on by default for the columns
+
+<br/>
+    <br/>
+    <br/>
+
+## Show/Hide a Column
+This table provide you the feature of Hide a Column. You can Hide or Show any Columns if you want. This option will by on by default for the columns
+
+<br/>
+<br/>
+<br/>
+
+## Print The Table
+This table provide you the feature of printing or Save the table as PDF formation. You can Hide the Columns you don't want while printing or saving the table as PDF format. you can use the Show/Hide column feature for that. This option will by on by default for the columns
+
 
 **Note: raise and issue for any problem you face!**
